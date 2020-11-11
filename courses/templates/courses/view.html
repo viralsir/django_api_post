@@ -1,0 +1,35 @@
+{%  extends "courses/layout.html" %}
+{% block script %}
+    <script>
+
+
+    $(document).ready(function()
+    {
+        $('#example').DataTable({
+            "ajax":{
+                "url":"view",
+                "dataType":"json"
+
+            },
+            columns:[
+                { data: 'name'},
+                { data: 'description'}
+
+            ]
+
+
+        });
+    } );
+    </script>
+{%  endblock %}
+{% block body %}
+    <table id="example" border="2">
+        <thead>
+            <th> Name </th>
+            <th> Description</th>
+
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+{%  endblock %}
